@@ -10,6 +10,9 @@ namespace c0730228
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("download");
+            Download();
+            Console.ReadLine();
             { 
         }
     }
@@ -19,5 +22,6 @@ namespace c0730228
 
         {
             Thread.Sleep(3000);
+            Console.WriteLine("Download complete...");
         }
 }

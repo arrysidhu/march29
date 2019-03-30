@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace c0730228
 {
-    class Program
+   
+class Program
     {
         static void Main(string[] args)
         {
@@ -25,11 +27,17 @@ namespace c0730228
 
     class Network
     {
-        public async void Download()
+        static ArrayList WbPageContents = new ArrayList();
+        public static async Task Download()
         {
+
             HttpClient client = new HttpClient();
-            var data = await client.GetStringAsync("https://torontopubliclibrary.ca");
+            var data = await client.GetStringAsync("http://ibm.com");
             Console.WriteLine(data);
+            foreach (var i in data)
+            {
+                WbPageContents.Add(i);
+            }
         }
     }
 }

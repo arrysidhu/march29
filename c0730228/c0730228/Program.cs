@@ -10,18 +10,26 @@ namespace c0730228
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("download");
+            Console.WriteLine(" Downloading a file");
             Download();
             Console.ReadLine();
-            { 
+        }
+
+        static async void Download()
+        {
+            await Network.Download();
+            Console.WriteLine("Download Completed");
+        }
+
+    }
+
+    class Network
+    {
+        static public Task Download()
+        {
+            return Task.Run(() => Thread.Sleep(3000));
+
         }
     }
-  
-
-        static void Download()
-
-        {
-            Thread.Sleep(3000);
-            Console.WriteLine("Download complete...");
-        }
 }
+
